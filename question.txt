@@ -1,0 +1,27 @@
+The Problem
+Write a program in your preferred language that calculates the missing parameters required to render order processing times on a canvas, similar to an appointment calendar.  The canvas should be 600 pixels high (one pixel for each second of the 10 minute interval) and 800 pixels wide, with 5 pixels padding on the right and left sides.  Order processing times will be rendered to the canvas according to the following three rules (exemplified in the image at the bottom of the page):
+
+Rules for the Visualization
+There should be no visually overlapping processing times.
+An order whose processing time overlaps with other order(s) should have the same width as those order(s).
+An order should occupy the maximum possible width on the canvas while still observing the second rule.
+The input to your program will be a JSON array of objects similar to the one below:
+
+[{"orderId" : 5, "packingStart" : 260, "duration" : 60} ,
+{"orderId" : 17, "packingStart" : 270, "duration" : 53}]
+
+In this array, for example, order ID 5 began packing at +260 seconds and packing took 60 seconds.
+
+Since the object parameters will be used to draw boxes representing processing times on the canvas, the output from your program should be a JSON string that includes the original array of objects augmented with two extra data points (in pixels) for each object:
+
+“left” – box distance from the left of the canvas.
+“width” – width of the box.
+Use the JSON string to create a web page styled like “orders.gif” below which visualizes the following order processing times:
+
+Order 1 whose processing starts at second 224 and lasts 69 seconds.
+Order 2 whose processing starts at second 335 and lasts 91 seconds.
+Order 3 whose processing starts at second 23 and lasts 47 seconds.
+Order 4 whose processing starts at second 130 and lasts 52 seconds.
+Order 5 whose processing starts at second 5 and lasts 183 seconds.
+Order 6 whose processing starts at second 253 and lasts 71 seconds.
+Order 7 whose processing starts at second 41 and lasts 68 seconds.
